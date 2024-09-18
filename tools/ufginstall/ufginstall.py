@@ -269,8 +269,9 @@ class TclapDep(Dep):
     force = self.forced()
     dl_dir = download_archive(url, path, force)
     copy_patch_files(patch_paths, dl_dir)
+    extra_args = ['-DCMAKE_CXX_STANDARD=17']
     with cwd(dl_dir):
-      run_cmake(force)
+      run_cmake(force, extra_args)
 
 
 class ZlibDep(Dep):
@@ -359,7 +360,7 @@ class UsdFromGltfDep(Dep):
   def install(self):
     """Installs usd_from_gltf."""
     with cwd(cfg.ufg_src_dir):
-      extra_args = ['-DUSD_DIR=%s' % cfg.usd_dir]
+      extra_args = ['-DUSD_DIR=%s' % cfg.usd_dir, '-DCMAKE_CXX_STANDARD=17']
       force = self.forced()
       run_cmake(force, extra_args)
 

@@ -12,17 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cmake_minimum_required(VERSION 3.8)
-
-# Set C++17 standard
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# Debug: print the C++ standard being used
-message(STATUS "C++ Standard being used: ${CMAKE_CXX_STANDARD}")
-
-
 find_package(tclap)
 if (NOT tclap_FOUND)
   message(FATAL_ERROR "TCLAP package not found.")
