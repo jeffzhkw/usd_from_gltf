@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+set(CMAKE_CXX_STANDARD 17)
+
 find_package(tclap)
 if (NOT tclap_FOUND)
   message(FATAL_ERROR "TCLAP package not found.")
