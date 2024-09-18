@@ -114,7 +114,7 @@ endforeach()
 else (MSVC)
 add_compile_options(
   -Wno-deprecated # Silence deprecation warnings due to USD headers.
-  -std=c++14
+  -std=c++17
 )
 
 endif (MSVC)

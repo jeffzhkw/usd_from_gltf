@@ -667,7 +667,6 @@ def run_cmake(force, extra_args=None):
         src_dir,
         '-DCMAKE_INSTALL_PREFIX=%s' % inst_dir,
         '-DCMAKE_PREFIX_PATH=%s' % inst_dir,
-        '-DCMAKE_CXX_STANDARD=17',
     ]
     if extra_args:
       gen_args += extra_args
