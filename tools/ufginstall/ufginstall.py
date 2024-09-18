@@ -666,7 +666,8 @@ def run_cmake(force, extra_args=None):
         'cmake',
         src_dir,
         '-DCMAKE_INSTALL_PREFIX=%s' % inst_dir,
-        '-DCMAKE_PREFIX_PATH=%s' % inst_dir
+        '-DCMAKE_PREFIX_PATH=%s' % inst_dir,
+        '-DCMAKE_CXX_STANDARD=17',
     ]
     if extra_args:
       gen_args += extra_args
@@ -679,7 +680,6 @@ def run_cmake(force, extra_args=None):
         '--build', '.',
         '--config', cfg.build_config,
         '--target', 'install',
-        '-DCMAKE_CXX_STANDARD=17',
         '--'
     ]
     if platform.system() == 'Windows':
