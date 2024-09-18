@@ -679,6 +679,7 @@ def run_cmake(force, extra_args=None):
         '--build', '.',
         '--config', cfg.build_config,
         '--target', 'install',
+        '-DCMAKE_CXX_STANDARD=17',
         '--'
     ]
     if platform.system() == 'Windows':
