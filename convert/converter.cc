@@ -27,6 +27,7 @@
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/usd/attribute.h"
 #include "pxr/usd/usd/modelAPI.h"
+#include "pxr/usd/usd/primvarsAPI.h"
 #include "pxr/usd/usd/stage.h"
 #include "pxr/usd/usdGeom/mesh.h"
 #include "pxr/usd/usdGeom/metrics.h"
@@ -680,9 +681,12 @@ void Converter::CreateMesh(
           uv = &transformed_uv;
         }
         const TfToken uvset_tok(AppendNumber("st", number));
-        const UsdGeomPrimvar uvs_primvar = usd_mesh.CreatePrimvar(
-            uvset_tok, SdfValueTypeNames->TexCoord2fArray,
-            UsdGeomTokens->vertex);
+        const UsdGeomPrimvarsAPI usd_primvar_api = UsdGeomPrimvarsAPI(usd_mesh.GetPrim())
+        const UsdGeomPrimvar uvs_primvar = UsdGeomPrimvarsAPI(usd_mesh.GetPrim()).CreatePrimvar(
+            uvset_tok, SdfValueTypeNames->TexCoord2fArray, UsdGeomTokens->vertex);
+        // const UsdGeomPrimvar uvs_primvar = usd_mesh.CreatePrimvar(
+        //     uvset_tok, SdfValueTypeNames->TexCoord2fArray,
+        //     UsdGeomTokens->vertex);
         SetVertexValues(uvs_primvar, *uv, emulate_double_sided);
       }
     }
