@@ -53,6 +53,7 @@ using PXR_NS::UsdGeomTokens;
 using PXR_NS::UsdGeomXform;
 using PXR_NS::UsdGeomXformOp;
 using PXR_NS::UsdModelAPI;
+using PXR_NS::UsdGeomPrimvarsAPI;
 using PXR_NS::UsdPrim;
 using PXR_NS::UsdShadeInput;
 using PXR_NS::UsdShadeMaterialBindingAPI;
