@@ -72,16 +72,16 @@ else ()
 set(USD_LIBS
   ${Python_LIBRARIES}
   -lpthread
-  libgf.so
-  libplug.so
-  libsdf.so
-  libtf.so
-  libusd.so
-  libusdGeom.so
-  libusdShade.so
-  libusdSkel.so
-  libusdUtils.so
-  libvt.so
+  libusd_gf.so
+  libusd_plug.so
+  libusd_sdf.so
+  libusd_tf.so
+  libusd_usd.so
+  libusd_usdGeom.so
+  libusd_usdShade.so
+  libusd_usdSkel.so
+  libusd_usdUtils.so
+  libusd_vt.so
 )
 if (Python_FOUND)
   list(APPEND USD_LIBS "${USD_DIR}/lib/libboost_python.so")
