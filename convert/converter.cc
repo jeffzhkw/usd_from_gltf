@@ -681,7 +681,6 @@ void Converter::CreateMesh(
           uv = &transformed_uv;
         }
         const TfToken uvset_tok(AppendNumber("st", number));
-        const UsdGeomPrimvarsAPI usd_primvar_api = UsdGeomPrimvarsAPI(usd_mesh.GetPrim())
         const UsdGeomPrimvar uvs_primvar = UsdGeomPrimvarsAPI(usd_mesh.GetPrim()).CreatePrimvar(
             uvset_tok, SdfValueTypeNames->TexCoord2fArray, UsdGeomTokens->vertex);
         // const UsdGeomPrimvar uvs_primvar = usd_mesh.CreatePrimvar(
