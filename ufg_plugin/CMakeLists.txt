@@ -38,7 +38,7 @@ else ()
 target_link_libraries(ufg_plugin
   convert
   ${USD_LIBS}
-  libarch.so
+  libusd_arch.so
 )
 endif ()
 
