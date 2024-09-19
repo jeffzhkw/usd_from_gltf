@@ -139,7 +139,7 @@ class DracoDep(Dep):
   def install(self):
     """Installs Draco dependency."""
     #url = 'https://github.com/google/draco/archive/1.3.5.zip' # here doesn't work with gcc 11: https://github.com/google/draco/issues/635
-    url = 'https://github.com/google/draco/archive/1.5.7.zip'
+    url = 'https://github.com/google/draco/archive/1.3.6.zip'
     path = os.path.join(cfg.src_dir, 'draco.zip')
     force = self.forced()
     dl_dir = download_archive(url, path, force)
